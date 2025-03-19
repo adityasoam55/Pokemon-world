@@ -23,7 +23,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         <button
           onClick={() => onPageChange(1)}
           disabled={currentPage === 1}
-          className={`sm:flex px-3 py-2 rounded-md border mx-1 items-center justify-center ${
+          className={`hidden sm:flex px-3 py-2 rounded-md border mx-1 items-center justify-center ${
             currentPage === 1
               ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
               : 'bg-white text-blue-500 hover:bg-blue-50 border-blue-200'
@@ -80,7 +80,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         <button
           onClick={() => onPageChange(totalPages)}
           disabled={currentPage === totalPages}
-          className={`sm:flex px-3 py-2 rounded-md border mx-1 items-center justify-center ${
+          className={`hidden sm:flex px-3 py-2 rounded-md border mx-1 items-center justify-center ${
             currentPage === totalPages
               ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
               : 'bg-white text-blue-500 hover:bg-blue-50 border-blue-200'
