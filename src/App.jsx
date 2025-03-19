@@ -86,9 +86,9 @@ function App() {
   }, [selectedPokemon]);
 
   return (
-    <div className="min-h-screen bg-pattern py-8 overflow-x-hidden">
+    <div className="min-h-screen bg-pattern py-4 overflow-x-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="mb-10 text-center py-4">
+        <header className="mb-4 text-center py-4">
           <h1 className="text-4xl font-bold text-blue-600 mb-3 text-shadow">Pokémon World</h1>
           <p className="text-lg text-gray-600">Search for your favorite Pokémon</p>
         </header>

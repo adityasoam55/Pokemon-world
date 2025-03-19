@@ -45,10 +45,10 @@ const PokemonCard = ({ pokemon, onClick }) => {
           />
         </div>
         
-        <h2 className="text-lg sm:text-xl font-bold capitalize mb-2 text-center">
+        <h2 className="text-lg sm:text-xl font-bold capitalize mb-1 text-center">
           {pokemon.name}
         </h2>
-        <div className="text-sm font-semibold mb-3">#{pokemon.id.toString().padStart(3, '0')}</div>
+        <div className="text-sm font-semibold mb-1">#{pokemon.id.toString().padStart(3, '0')}</div>
         
         <div className="flex flex-wrap justify-center gap-2 my-2">
           {pokemon.types.map((typeInfo) => (
@@ -61,7 +61,7 @@ const PokemonCard = ({ pokemon, onClick }) => {
           ))}
         </div>
         
-        <div className="flex flex-col items-center gap-1 mt-4 w-full text-xs sm:text-sm border-t border-white/30 pt-4">
+        <div className="flex flex-col items-center gap-1 mt-2 w-full text-xs sm:text-sm border-t border-white/30 pt-4">
           <div className="font-medium">Height: {pokemon.height / 10}m</div>
           <div className="font-medium">Weight: {pokemon.weight / 10}kg</div>
         </div>
