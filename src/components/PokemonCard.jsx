@@ -1,6 +1,7 @@
 import React from 'react';
 
 const PokemonCard = ({ pokemon, onClick }) => {
+  console.log(pokemon);
   if (!pokemon) return null;
 
   // Get the primary type for background color
@@ -32,7 +33,7 @@ const PokemonCard = ({ pokemon, onClick }) => {
   
   return (
     <div 
-      className={`rounded-xl shadow-lg overflow-hidden ${bgColor} transition-transform hover:scale-102 cursor-pointer max-w-100 hover:shadow-xl border border-white/20 card-shadow card-shadow-hover py-4`}
+      className={`rounded-xl shadow-lg overflow-hidden ${bgColor} transition-transform hover:scale-102 cursor-pointer max-w-100 hover:shadow-xl border border-white/20 card-shadow card-shadow-hover`}
       onClick={() => onClick(pokemon)}
     >
       <div className="p-4 sm:p-6 flex flex-col items-center w-52">

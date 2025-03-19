@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@import "tailwindcss/preflight";
-@tailwind utilities;
 
 /* Global styles */
 html, body, #root {
@@ -36,19 +34,6 @@ body {
   background: #a0aec0;
 }
 
-/* Custom animations
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.hover-bounce:hover {
-  animation: bounce 0.7s ease infinite;
-} */
 
 /* Custom utilities */
 .text-shadow {

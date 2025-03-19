@@ -32,11 +32,11 @@ const PokemonDetail = ({ pokemon, onClose }) => {
   
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className={`max-w-4xl w-full rounded-lg shadow-2xl overflow-hidden ${bgColor} bg-opacity-90 relative`}>
+      <div className={`max-w-4xl w-full rounded-lg shadow-2xl ${bgColor} bg-opacity-90 relative max-h-[90vh] overflow-y-auto`}>
         {/* Close button */}
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 transition-colors"
+          className="absolute top-4 right-4 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 transition-colors z-10"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -45,13 +45,13 @@ const PokemonDetail = ({ pokemon, onClose }) => {
         
         <div className="flex flex-col md:flex-row p-6">
           {/* Left column: Image and basic info */}
-          <div className="md:w-1/3 flex flex-col items-center md:border-r border-white border-opacity-20 pr-6">
+          <div className="md:w-1/3 flex flex-col items-center md:border-r border-white border-opacity-20 pr-0 md:pr-6">
             <img 
               src={pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default} 
               alt={pokemon.name}
-              className="w-64 h-64 object-contain mb-4"
+              className="w-48 h-48 md:w-64 md:h-64 object-contain mb-4"
             />
-            <h1 className="text-3xl font-bold capitalize mb-2">{pokemon.name}</h1>
+            <h1 className="text-2xl md:text-3xl font-bold capitalize mb-2">{pokemon.name}</h1>
             <div className="text-xl mb-4">#{pokemon.id.toString().padStart(3, '0')}</div>
             
             <div className="flex gap-2 mb-4">
@@ -72,7 +72,7 @@ const PokemonDetail = ({ pokemon, onClose }) => {
           </div>
           
           {/* Right column: Stats and abilities */}
-          <div className="md:w-2/3 pl-6 mt-6 md:mt-0">
+          <div className="md:w-2/3 pl-0 md:pl-6 mt-6 md:mt-0">
             <h2 className="text-xl font-bold mb-4">Base Stats</h2>
             <div className="space-y-3">
               {pokemon.stats.map(stat => (
@@ -105,7 +105,7 @@ const PokemonDetail = ({ pokemon, onClose }) => {
             </div>
             
             <h2 className="text-xl font-bold mt-6 mb-4">Moves</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-2 max-h-32 overflow-y-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2 max-h-48 overflow-y-auto pr-2">
               {pokemon.moves.slice(0, 15).map(move => (
                 <div 
                   key={move.move.name}
