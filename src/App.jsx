@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import PokemonList from './components/PokemonList';
-import SearchBar from './components/SearchBar';
-import Pagination from './components/Pagination';
-import PokemonDetail from './components/PokemonDetail';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import Pokedex from './components/Pokedex';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import { fetchPokemons, searchPokemons } from './services/api';
 
 function App() {
@@ -86,49 +87,28 @@ function App() {
   }, [selectedPokemon]);
 
   return (
-    <div className="min-h-screen bg-pattern py-4 overflow-x-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="mb-4 text-center py-4">
-          <h1 className="text-4xl font-bold text-blue-600 mb-3 text-shadow">Pokémon World</h1>
-          <p className="text-lg text-gray-600">Search for your favorite Pokémon</p>
-        </header>
-
-        <div className="mb-10">
-          <SearchBar onSearch={handleSearch} />
-        </div>
-
-        {error && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg relative mb-8 card-shadow" role="alert">
-            <span className="block sm:inline">{error}</span>
-          </div>
-        )}
-
-        <div className="mt-6 card-shadow rounded-lg overflow-hidden">
-          <PokemonList 
-            pokemons={pokemons} 
-            loading={loading} 
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/pokedex" element={
+          <Pokedex 
+            pokemons={pokemons}
+            loading={loading}
+            error={error}
+            searchQuery={searchQuery}
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onSearch={handleSearch}
+            onPageChange={handlePageChange}
             onSelectPokemon={handleSelectPokemon}
+            selectedPokemon={selectedPokemon}
+            onCloseDetail={handleCloseDetail}
           />
-        </div>
-
-        {!isSearching && !loading && pokemons.length > 0 && (
-          <div className="mt-8 mb-4">
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={handlePageChange}
-            />
-          </div>
-        )}
-
-        {selectedPokemon && (
-          <PokemonDetail 
-            pokemon={selectedPokemon} 
-            onClose={handleCloseDetail} 
-          />
-        )}
-      </div>
-    </div>
+        } />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
