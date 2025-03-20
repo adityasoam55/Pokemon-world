@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <MdOutlineCatchingPokemon className='h-10 w-10'/>
+              <MdOutlineCatchingPokemon className='h-10 w-10' />
               <span className="ml-3 text-xl font-bold text-gray-800"><SiPokemon className='h-20 w-20' /></span>
             </Link>
           </div>
@@ -21,7 +21,6 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-gray-700 hover:text-red-500 px-3 py-2 font-medium">Home</Link>
             <Link to="/pokedex" className="text-gray-700 hover:text-red-500 px-3 py-2 font-medium">Pokedex</Link>
-            <Link to="/types" className="text-gray-700 hover:text-red-500 px-3 py-2 font-medium">Types</Link>
             <Link to="/about" className="text-gray-700 hover:text-red-500 px-3 py-2 font-medium">About</Link>
           </div>
 
@@ -70,13 +69,6 @@ const Navbar = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             Pokedex
-          </Link>
-          <Link
-            to="/types"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-500 hover:bg-gray-50"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Types
           </Link>
           <Link
             to="/about"
