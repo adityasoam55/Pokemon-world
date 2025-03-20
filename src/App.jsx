@@ -5,6 +5,7 @@ import Pokedex from './components/Pokedex';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { fetchPokemons, searchPokemons } from './services/api';
+import Calltoaction from './components/Calltoaction';
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
@@ -107,6 +108,7 @@ function App() {
           />
         } />
       </Routes>
+      <Calltoaction />
       <Footer />
     </Router>
   );

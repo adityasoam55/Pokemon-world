@@ -12,16 +12,16 @@ const HomePage = () => {
             <h1 className="text-3xl md:text-5xl text-gray-800 mb-4">Welcome to the World of</h1>
             <h1 className="text-4xl md:text-6xl font-bold text-red-500 mb-6">Pokemon</h1>
             <p className="text-lg text-gray-700 mb-8">World's Famous Pokemon Collection At One Place</p>
-            
+
             <div className="flex space-x-4">
-              <Link 
-                to="/pokedex" 
+              <Link
+                to="/pokedex"
                 className="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-full transition-colors"
               >
                 Explore Pokedex
               </Link>
-              <Link 
-                to="/about" 
+              <Link
+                to="/about"
                 className="border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-bold py-3 px-8 rounded-full transition-colors"
               >
                 Learn More
@@ -29,9 +29,9 @@ const HomePage = () => {
             </div>
           </div>
           <div className="md:w-1/2 ">
-            <img 
-              src="/images/Pikachu1.png" 
-              alt="Pokemons" 
+            <img
+              src="/images/Pikachu1.png"
+              alt="Pokemons"
               className="w-full mx-auto"
             />
           </div>
@@ -43,9 +43,9 @@ const HomePage = () => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-8 md:mb-0">
-              <img 
-                src="/images/Pokemons.webp" 
-                alt="Ash and Pikachu" 
+              <img
+                src="/images/Pokemons.webp"
+                alt="Ash and Pikachu"
                 className="w-full max-w-md mx-auto"
               />
             </div>
@@ -54,13 +54,13 @@ const HomePage = () => {
                 World Famous Pokemons are Alive Here!
               </h2>
               <p className="text-gray-700 mb-6 leading-relaxed">
-              Pokémon is a Japanese media franchise that takes place in a shared universe in which humans co-exist with creatures known as Pokémon, a large variety of species endowed with special powers. The franchise's primary target audience is children aged 5 to 12, but it is known to attract people of all ages.
+                Pokémon is a Japanese media franchise that takes place in a shared universe in which humans co-exist with creatures known as Pokémon, a large variety of species endowed with special powers. The franchise's primary target audience is children aged 5 to 12, but it is known to attract people of all ages.
               </p>
               <p className="text-gray-700 mb-6 leading-relaxed">
                 The franchise was created by Satoshi Tajiri in 1995, and is centered on fictional creatures called "Pokémon", which humans, known as Pokémon Trainers, catch and train to battle each other for sport.
               </p>
-              <Link 
-                to="/pokedex" 
+              <Link
+                to="/pokedex"
                 className="inline-block bg-white border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-semibold py-2 px-6 rounded-full transition-colors"
               >
                 See More...
@@ -76,11 +76,10 @@ const HomePage = () => {
           <h2 className="text-3xl font-bold text-center mb-12">Pokemon Types</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {pokemonTypes.map(type => (
-              <div 
+              <div
                 key={type.name}
                 className={`${type.color} rounded-lg p-4 text-center shadow-md hover:shadow-lg transition-shadow`}
               >
-                <img src={`/images/types/${type.name}.png`} alt={type.name} className="w-16 h-16 mx-auto mb-2" />
                 <p className="text-white font-medium capitalize">{type.name}</p>
               </div>
             ))}
@@ -103,7 +102,7 @@ const HomePage = () => {
                   <h3 className="text-xl font-bold capitalize mb-2">{pokemon.name}</h3>
                   <div className="flex gap-2">
                     {pokemon.types.map(type => (
-                      <span 
+                      <span
                         key={type}
                         className={`px-3 py-1 rounded-full text-xs font-semibold text-white ${typeColors[type]} capitalize`}
                       >
@@ -115,20 +114,6 @@ const HomePage = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 bg-red-500 text-white">
-        <div className="max-w-3xl mx-auto text-center px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to become a Pokemon Master?</h2>
-          <p className="text-xl mb-8">Explore our complete Pokedex and learn about all your favorite Pokemon!</p>
-          <Link 
-            to="/pokedex"
-            className="bg-white text-red-500 hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg inline-block"
-          >
-            Explore Now
-          </Link>
         </div>
       </section>
     </div>
@@ -156,7 +141,7 @@ const pokemonTypes = [
   { name: 'ghost', color: 'bg-purple-600' },
   { name: 'steel', color: 'bg-gray-500' },
 ];
-
+// 
 // Type colors mapping for featured Pokemon
 const typeColors = {
   fire: 'bg-orange-500',
